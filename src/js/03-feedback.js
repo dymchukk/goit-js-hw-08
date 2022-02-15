@@ -1,4 +1,4 @@
-import throttle from 'lodash.throttle';
+/*import throttle from 'lodash.throttle';
 
 const KEY = 'feedback-form-state';
 
@@ -40,3 +40,4 @@ function onFormSubmit(event) {
     event.currentTarget.reset();
   localStorage.removeItem(KEY);
 }
+*/
