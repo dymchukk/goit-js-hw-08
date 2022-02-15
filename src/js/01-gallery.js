@@ -30,6 +30,45 @@ function createGalleryMarkup(galleryItems) {
         .join('');
 }
 
+
+function onGalleryContainerClick(event) {
+    event.preventDefault();
+
+    if (!event.target.classList.contains('gallery__image')) {
+        return;
+    } 
+    
+  modalShow(event.target.dataset.source);
+}
+
+let instance;
+function modalShow(src) {
+  instance = basicLightbox.create( `<img src="${src}"></img>`,
+    {
+      onShow: instance => {
+        addListener();
+      },
+      onClose: instance => {
+        removeListener();
+      },
+    },
+  );
+  instance.show();
+}
+
+function addListener() {
+  window.addEventListener('keydown', onEscClick);
+}
+
+function onEscClick(event) {
+  if (event.code === 'Escape') {
+    instance.close();
+  }
+}
+
+function removeListener() {
+  window.removeEventListener('keydown', onEscClick);
+}
           
 let modalGallery = new SimpleLightbox('.gallery a', {
     caption: true,
