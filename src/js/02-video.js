@@ -1,4 +1,4 @@
-/*import Player from '@vimeo/player';
+import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
 
 const KEY = 'videoplayer-current-time';
@@ -17,4 +17,3 @@ player.on(
   }, 1000),
 );
 
-*/
