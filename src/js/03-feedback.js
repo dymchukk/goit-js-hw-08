@@ -26,9 +26,9 @@ const formInput = {};
 
 const input = document.querySelector('.feedback-form');
 
-fillTheForm();
+putTheForm();
 
-function fillTheForm() {
+function putTheForm() {
   const enteredData = localStorage.getItem(KEY);
   if (enteredData) {
     const { email, message } = JSON.parse(enteredData);
